@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <stdio.h>
 
 
 
@@ -15,6 +16,7 @@ class Simo
 		int b;
 };
 
+
 int Simo::get()
 {
 	return b;
@@ -25,7 +27,7 @@ Simo::~Simo()
 	std::cout << "BYE ByYYYYE I died\n";
 }
 
-Simo::Simo() : b(0)
+Simo::Simo()
 {
 	std::cout << "I WILL CONSTRUCT SIDI MOULAY\n";
 }
@@ -61,24 +63,32 @@ Simo*	dir(void)
 	return (b);
 }
 
-int main(void)
-{
-	Simo *tmp = dir();
-	// a.set(6);
-	// int i = a.get();
-	// std::cout << i << std::endl;
-	// std::string hamid;
-	// // Messi x;
+// int main(void)
+// {
+// 	Simo *tmp = dir();
+// 	// a.set(6);
+// 	// int i = a.get();
+// 	// std::cout << i << std::endl;
+// 	// std::string hamid;
+// 	// // Messi x;
 
-	// hamid = "KuwagataAlpha";
-	// // std::cout << hami
-	// if (hamid.length() > 9)
-	// {
-	// 	hamid.resize(10);
-	// 	hamid.replace(9, 1, ".");
-	// }
-	// std::cout << std::setw(10) << hamid << std::endl;
-	// std::cout << hamid << std::endl;
-	delete tmp;
-	std::cout << "END\n";
+// 	// hamid = "KuwagataAlpha";
+// 	// // std::cout << hami
+// 	// if (hamid.length() > 9)
+// 	// {
+// 	// 	hamid.resize(10);
+// 	// 	hamid.replace(9, 1, ".");
+// 	// }
+// 	// std::cout << std::setw(10) << hamid << std::endl;
+// 	// std::cout << hamid << std::endl;
+// 	delete tmp;
+// 	std::cout << "END\n";
+// }
+
+int	main(void)
+{
+	Simo messi;
+
+	int x = messi.get();
+	std::cout << x << std::endl;
 }

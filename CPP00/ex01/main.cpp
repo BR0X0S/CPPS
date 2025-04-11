@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 23:53:18 by oumondad          #+#    #+#             */
-/*   Updated: 2025/03/10 21:22:24 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/03/23 21:31:00 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,8 @@ void	ft_search(PhoneBook phon, int i)
 	{
 		std::cout << "Enter The Index Of The Contact for Full Info : ";
 		std::getline(std::cin, inti);
+		if (std::cin.eof())
+			std::exit(0);
 		if (inti.length() != 1)
 			continue;
 		int nbr = ((inti[0] - 48) - 1);
