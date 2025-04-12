@@ -6,13 +6,13 @@
 #    By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 11:29:03 by oumondad          #+#    #+#              #
-#    Updated: 2025/04/12 18:55:12 by oumondad         ###   ########.fr        #
+#    Updated: 2025/04/12 18:54:06 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Moar_brainz
+NAME		= violence
 
-SRC			= main.cpp
+SRC			= Makefile, main.cpp, Weapon.cpp, HumanA.cpp, HumanB.cpp
 
 OBJ			= ${SRC:.cpp=.o}
 
