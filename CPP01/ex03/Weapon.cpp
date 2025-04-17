@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 18:53:25 by oumondad          #+#    #+#             */
-/*   Updated: 2025/04/17 20:47:08 by oumondad         ###   ########.fr       */
+/*   Created: 2025/04/17 17:44:11 by oumondad          #+#    #+#             */
+/*   Updated: 2025/04/17 19:38:12 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
-
 #include "Weapon.hpp"
 
+Weapon::Weapon() : type("hands")
+{}
 
-class HumanA
+Weapon::Weapon(std::string Type) : type(Type)
 {
-	private :
-
-		std::string name;
-		Weapon wpn;
-
-	public :
-
-		HumanA();
-		HumanA(std::string Name, Weapon &wp);
-		void attack() const;
-};
+    
+}
 
 
+Weapon::~Weapon()
+{
+    
+}
 
-#endif
+const std::string& Weapon::getType(void) const
+{
+	return (type);
+}
+
+void Weapon::setType(std::string new_type)
+{
+	type = new_type;
+}
