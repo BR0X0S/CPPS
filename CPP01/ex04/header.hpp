@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 17:47:25 by oumondad          #+#    #+#             */
-/*   Updated: 2025/04/19 17:48:15 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:27:14 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 #define HEADER_HPP
 
 #include <iostream>
-
+#include <fstream>
 
 #endif
