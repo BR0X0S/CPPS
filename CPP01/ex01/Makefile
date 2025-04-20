@@ -6,11 +6,11 @@
 #    By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 11:29:03 by oumondad          #+#    #+#              #
-#    Updated: 2025/04/12 17:17:51 by oumondad         ###   ########.fr        #
+#    Updated: 2025/04/17 16:53:33 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Zombie
+NAME		= Moar_brainz
 
 SRC			= Zombie.cpp main.cpp
 

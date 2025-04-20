@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 18:21:40 by oumondad          #+#    #+#             */
-/*   Updated: 2025/04/12 18:42:52 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/04/13 14:06:40 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int main()
 {
-	std::string str;
-	str = "HI THIS IS BRAIN";
-
+	std::string str = "HI THIS IS BRAIN";
 	std::string *stringPTR;
 	stringPTR = &str;
 

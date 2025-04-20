@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 11:30:37 by oumondad          #+#    #+#             */
-/*   Updated: 2025/04/12 16:32:25 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/04/13 14:04:21 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	Zombie::SetName(std::string str)
 
 Zombie::~Zombie()
 {
-	std::cout << name << "is destroyd" << std::endl;
+	std::cout << name << "is destroyed" << std::endl;
 }

@@ -6,11 +6,11 @@
 #    By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 11:29:03 by oumondad          #+#    #+#              #
-#    Updated: 2025/04/17 21:18:05 by oumondad         ###   ########.fr        #
+#    Updated: 2025/04/20 16:42:52 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= violence
+NAME		= Violence
 
 SRC			= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 

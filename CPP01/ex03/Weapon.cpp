@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 17:44:11 by oumondad          #+#    #+#             */
-/*   Updated: 2025/04/17 19:38:12 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/04/19 17:38:25 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,11 @@ Weapon::Weapon() : type("hands")
 {}
 
 Weapon::Weapon(std::string Type) : type(Type)
-{
-    
-}
+{}
 
 
 Weapon::~Weapon()
-{
-    
-}
+{}
 
 const std::string& Weapon::getType(void) const
 {
