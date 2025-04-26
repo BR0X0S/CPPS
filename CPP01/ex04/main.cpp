@@ -6,11 +6,12 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 17:42:39 by oumondad          #+#    #+#             */
-/*   Updated: 2025/04/24 17:52:32 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:53:27 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.hpp"
+#include <iostream>
+#include <fstream>
 
 void	replace(std::ifstream &file, std::ofstream &newFile, std::string s1, std::string s2)
 {
@@ -47,7 +48,7 @@ int main(int ac, char **av)
 		std::ofstream newFile(outf.c_str());
 		if (!newFile)
 		{
-			std::cout << "ERROR : Can't Creat newFile" << std::endl;
+			std::cout << "ERROR : Can't Create newFile" << std::endl;
 			return (1);
 		}
 		replace(file, newFile, s1, s2);

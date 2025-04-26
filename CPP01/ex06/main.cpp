@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 17:47:25 by oumondad          #+#    #+#             */
-/*   Updated: 2025/04/20 17:27:14 by oumondad         ###   ########.fr       */
+/*   Created: 2025/04/24 18:03:28 by oumondad          #+#    #+#             */
+/*   Updated: 2025/04/24 19:44:01 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-#define HEADER_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <fstream>
-
-#endif
+int main(int ac, char **av)
+{
+	Harl test;
+	std::string s1 = "Garbage";
+	if (ac == 2 && av[1])
+		s1 = av[1];
+	test.complain(s1);
+}
