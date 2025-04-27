@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 18:02:46 by oumondad          #+#    #+#             */
-/*   Updated: 2025/04/24 19:44:51 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/04/27 19:04:46 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,33 @@
 
 void	Harl::debug( void )
 {
-	std::cout << "" << std::endl;
+	std::cout << "[ DEBUG ]" << std::endl;
 	std::cout << "I love having extra bacon for my ";
 	std::cout << "7XL-double-cheese-triple-pickle-special";
-	std::cout << "-ketchup burger. I really do!" << std::endl;
+	std::cout << "-ketchup burger.\nI really do!\n" << std::endl;
 }
 
 void	Harl::info( void )
 {
-	std::cout << "" << std::endl;
-	std::cout << "I cannot believe adding extra bacon costs more money. ";
+	std::cout << "[ INFO ]" << std::endl;
+	std::cout << "I cannot believe adding extra bacon costs more money.\n";
 	std::cout << "You didn't putenough bacon in my burger! ";
-	std::cout << "If you did, I wouldn't be asking for more!" << std::endl;
+	std::cout << "If you did, I wouldn't be asking for more!\n" << std::endl;
 }
 
 void	Harl::warning( void )
 {
-	std::cout << "" << std::endl;
-	std::cout << "I think I deserve to have some extra bacon for free. ";
+	std::cout << "[ WARNING ]" << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free." << std::endl;
 	std::cout << "I've been coming foryears whereas ";
-	std::cout << "you started working here since last month." << std::endl;
+	std::cout << "you started working here since last month.\n" << std::endl;
 }
 
 void	Harl::error( void )
 {
-	std::cout << "" << std::endl;
+	std::cout << "[ ERROR ]" << std::endl;
 	std::cout << "This is unacceptable! I want to speak";
-	std::cout << " to the manager now." << std::endl;
+	std::cout << " to the manager now.\n" << std::endl;
 }
 
 void	Harl::complain( std::string level )
