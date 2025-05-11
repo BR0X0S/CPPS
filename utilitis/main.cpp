@@ -10,12 +10,17 @@ class Simo
 	public:
 		Simo();
 		~Simo();
+		static int sum(int a, int b);
 		void	set(int val);
 		int		get();
 	private:
 		int b;
 };
 
+int Simo::sum(int a, int b)
+{
+	return (a + b);
+}
 
 int Simo::get()
 {
@@ -87,8 +92,12 @@ Simo*	dir(void)
 
 int	main(void)
 {
-	Simo messi;
+	// Simo messi;
 
-	int x = messi.get();
-	std::cout << x << std::endl;
+	// // int x = messi.get();
+	// // std::cout << x << std::endl;
+	// int a = Simo::sum(5, 4);
+	// std::cout << a << std::endl;
+	char	*ptr = NULL;
+	std::cout << *ptr << std::endl;
 }

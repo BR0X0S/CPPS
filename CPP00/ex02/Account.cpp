@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 20:24:29 by oumondad          #+#    #+#             */
-/*   Updated: 2025/03/17 21:03:07 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/05/08 21:53:00 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
-/*--------------------------------CONSTRACTER--------------------------------*/
+/*--------------------------------CONSTRUCTOR--------------------------------*/
 
 Account::Account( int initial_deposit )
 {
@@ -53,7 +53,6 @@ int	Account::getNbWithdrawals( void )
 
 int		Account::checkAmount( void ) const 
 {return (_amount);}
-
 
 /*----------------------------------SETTERS----------------------------------*/
 
@@ -135,7 +134,7 @@ void	Account::_displayTimestamp(void)
 	std::cout << now->tm_sec<<"] ";
 }
 
-/*--------------------------------DESTRACTER--------------------------------*/
+/*--------------------------------DESTRUCTOR--------------------------------*/
 
 Account::~Account()
 {
