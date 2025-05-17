@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 17:42:39 by oumondad          #+#    #+#             */
-/*   Updated: 2025/04/24 19:53:27 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/05/14 15:54:34 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int main(int ac, char **av)
 {
 	std::string s1 = av[2];
 	std::string s2 = av[3];
+
 	if (ac == 4 && !s1.empty() && !s2.empty())
 	{
 		std::ifstream file(av[1]);

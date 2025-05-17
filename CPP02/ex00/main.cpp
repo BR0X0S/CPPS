@@ -5,31 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 17:43:33 by oumondad          #+#    #+#             */
-/*   Updated: 2025/05/14 15:04:32 by oumondad         ###   ########.fr       */
+/*   Created: 2025/05/17 18:05:06 by oumondad          #+#    #+#             */
+/*   Updated: 2025/05/17 18:05:07 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-
-int main()
-{
-	{
-		Weapon club = Weapon("crude spiked club");
-		Weapon hamid;
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return 0;
-}
