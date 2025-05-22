@@ -6,13 +6,13 @@
 #    By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 11:29:03 by oumondad          #+#    #+#              #
-#    Updated: 2025/04/26 21:55:15 by oumondad         ###   ########.fr        #
+#    Updated: 2025/05/22 20:32:20 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Harl_Filter
+NAME		= OCF
 
-SRC			= main.cpp Harl.cpp
+SRC			= main.cpp Fixed.cpp
 
 OBJ			= ${SRC:.cpp=.o}
 
