@@ -90,14 +90,20 @@ Simo*	dir(void)
 // 	std::cout << "END\n";
 // }
 
-int	main(void)
-{
-	// Simo messi;
+// int	main(void)
+// {
+// 	// Simo messi;
 
-	// // int x = messi.get();
-	// // std::cout << x << std::endl;
-	// int a = Simo::sum(5, 4);
-	// std::cout << a << std::endl;
-	char	*ptr = NULL;
-	std::cout << *ptr << std::endl;
+// 	// // int x = messi.get();
+// 	// // std::cout << x << std::endl;
+// 	// int a = Simo::sum(5, 4);
+// 	// std::cout << a << std::endl;
+// 	char	*ptr = NULL;
+// 	std::cout << *ptr << std::endl;
+// }
+
+int	main(int ac, char **av)
+{
+	int x = 2^atoi(av[1]);
+	std::cout << x << std::endl;
 }
