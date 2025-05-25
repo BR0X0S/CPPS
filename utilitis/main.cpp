@@ -13,6 +13,7 @@ class Simo
 		static int sum(int a, int b);
 		void	set(int val);
 		int		get();
+		int ft_strlen(int x) const;
 	private:
 		int b;
 };
@@ -102,8 +103,36 @@ Simo*	dir(void)
 // 	std::cout << *ptr << std::endl;
 // }
 
+// void shifting(const int &i)
+// {
+// 	// i = i << 8;
+// }
+
+int Simo::ft_strlen(int x) const
+{
+	x++;
+	return x;
+	// int i = 0;
+	// while (str[i])
+	// 	i++;
+	// return i;
+}
+
 int	main(int ac, char **av)
 {
-	int x = 2^atoi(av[1]);
+	// float x;
+	// x = 13.37;
+	// int a;
+	// a = (int)x << 8;
+	// float b;
+	// b = a >> 8;
+	// int x = atoi(av[1]);
+	// shifting(x);
+	// std::cout << b << std::endl;
+
+	Simo test;
+	// char *str = "oussama";
+	int x = test.ft_strlen(10);
 	std::cout << x << std::endl;
+
 }
