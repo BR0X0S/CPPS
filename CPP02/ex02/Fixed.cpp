@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:05:37 by oumondad          #+#    #+#             */
-/*   Updated: 2025/05/27 19:09:18 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/05/29 15:48:08 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Fixed::Fixed(): f_value(0)
 Fixed::Fixed(Fixed const &copy)
 {	
 	*this = copy;
-	std::cout << "test" << std::endl;
 }
 
 Fixed &Fixed::operator = (Fixed const &src)
@@ -31,7 +30,9 @@ Fixed &Fixed::operator = (Fixed const &src)
 }
 
 Fixed::Fixed(const int i) : f_value(i << fb)
-{}
+{
+	// std::cout << "Int Constructor Called" << std::endl;
+}
 
 Fixed::Fixed(const float f) : f_value(roundf(f * (1 << fb)))
 {}
@@ -64,63 +65,121 @@ std::ostream &operator << (std::ostream &out, Fixed const &src)
 	return(out << src.toFloat());
 }
 
-bool Fixed::operator > (Fixed const &src)
+bool Fixed::operator > (Fixed const &src) const
 {
 	if (f_value > src.f_value)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator < (Fixed const &src)
+bool Fixed::operator < (Fixed const &src) const
 {
 	if (f_value < src.f_value)
 		return (true);
 	return (false);
 }
-bool Fixed::operator >= (Fixed const &src)
+bool Fixed::operator >= (Fixed const &src) const
 {
 	if (f_value >= src.f_value)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator <= (Fixed const &src)
+bool Fixed::operator <= (Fixed const &src) const
 {
 	if (f_value <= src.f_value)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator == (Fixed const &src)
+bool Fixed::operator == (Fixed const &src) const
 {
 	if (f_value == src.f_value)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator != (Fixed const &src)
+bool Fixed::operator != (Fixed const &src) const
 {
 	if (f_value != src.f_value)
 		return (true);
 	return (false);
 }
 
-Fixed &Fixed::operator + (Fixed const &src)
+Fixed Fixed::operator + (Fixed const &src) const
 {
-	return (f_value + src.f_value);
+	return ((f_value + src.f_value) >> fb);
 }
 
-Fixed &Fixed::operator - (Fixed const &src)
+Fixed Fixed::operator - (Fixed const &src) const
 {
-	
+	return ((f_value - src.f_value) >> fb);
 }
 
-Fixed &Fixed::operator / (Fixed const &src)
+Fixed Fixed::operator / (Fixed const &src) const
 {
-	
+	Fixed tmp;
+	tmp.f_value = (f_value << fb ) / src.f_value; 
+	return (tmp);
 }
 
-Fixed &Fixed::operator * (Fixed const &src)
+Fixed Fixed::operator * (Fixed const &src) const
 {
-	
+	Fixed tmp;
+	tmp.f_value = (f_value * src.f_value) >> fb; 
+	return (tmp);
+}
+
+Fixed &Fixed::min(Fixed &fp1, Fixed &fp2)
+{
+	if (fp1 < fp2)
+		return (fp1);
+	return (fp2);
+}
+
+Fixed const &Fixed::min(const Fixed &fp1, const Fixed &fp2)
+{
+	if (fp1 < fp2)
+		return (fp1);
+	return (fp2);
+}
+
+Fixed &Fixed::max(Fixed &fp1, Fixed &fp2)
+{
+	if (fp1 > fp2)
+		return (fp1);
+	return (fp2);
+}
+
+Fixed const &Fixed::max(Fixed const &fp1, Fixed const &fp2)
+{
+	if (fp1 > fp2)
+		return (fp1);
+	return (fp2);
+}
+
+Fixed Fixed::operator ++ (void)
+{
+	f_value++;
+	return (*this);
+}
+
+Fixed Fixed::operator -- (void)
+{
+	f_value--;
+	return (*this);
+}
+
+Fixed Fixed::operator ++ (int)
+{
+	Fixed tmp(*this);
+	++f_value;
+	return (tmp);
+}
+
+Fixed Fixed::operator -- (int)
+{
+	Fixed tmp(*this);
+		--f_value;
+	return (tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:05:24 by oumondad          #+#    #+#             */
-/*   Updated: 2025/05/27 18:28:23 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/05/27 22:04:12 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ class Fixed
 		Fixed(const float f);
 		Fixed(Fixed const &copy);
 		Fixed &operator = (Fixed const &src);
-		bool operator > (Fixed const &src);
-		bool operator < (Fixed const &src);
-		bool operator >= (Fixed const &src);
-		bool operator <= (Fixed const &src);
-		bool operator == (Fixed const &src);
-		bool operator != (Fixed const &src);
-		Fixed &operator + (Fixed const &src);
-		Fixed &operator - (Fixed const &src);
-		Fixed &operator / (Fixed const &src);
-		Fixed &operator * (Fixed const &src);
+		bool operator > (Fixed const &src) const;
+		bool operator < (Fixed const &src) const;
+		bool operator <= (Fixed const &src) const;
+		bool operator >= (Fixed const &src) const;
+		bool operator == (Fixed const &src) const;
+		bool operator != (Fixed const &src) const;
+		Fixed operator + (Fixed const &src) const;
+		Fixed operator - (Fixed const &src) const;
+		Fixed operator / (Fixed const &src) const;
+		Fixed operator * (Fixed const &src) const;
 		Fixed operator ++ (void);
 		Fixed operator -- (void);
 		Fixed operator ++ (int);
@@ -51,6 +51,11 @@ class Fixed
 		void	setRawBits( int const raw );
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
+		static Fixed &min(Fixed &fp1, Fixed &fp2);
+		static Fixed const &min(Fixed const &fp1, Fixed const &fp2);
+		static Fixed &max(Fixed &fp1, Fixed &fp2);
+		static const Fixed &max(Fixed const &fp1, Fixed const &fp2);
+		
 
 };
 
