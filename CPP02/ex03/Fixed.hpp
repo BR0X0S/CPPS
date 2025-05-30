@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:05:24 by oumondad          #+#    #+#             */
-/*   Updated: 2025/05/27 22:04:12 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/05/30 17:27:18 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,3 @@ class Fixed
 std::ostream &operator << (std::ostream &out, Fixed const &src);
 
 #endif
-
-// the journey of thousand miles begins with step
-// practice makes perfect
-// don't watch the clock , just do what it dose , keep going

@@ -6,11 +6,11 @@
 #    By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 11:29:03 by oumondad          #+#    #+#              #
-#    Updated: 2025/05/22 20:32:20 by oumondad         ###   ########.fr        #
+#    Updated: 2025/05/30 17:28:31 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= OCF
+NAME		= OVL
 
 SRC			= main.cpp Fixed.cpp
 

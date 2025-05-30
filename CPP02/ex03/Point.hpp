@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:40:17 by oumondad          #+#    #+#             */
-/*   Updated: 2025/05/29 21:30:19 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/05/30 16:48:48 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ class Point
 		Point();
 		Point(Point const &cpy);
 		Point &operator = (Point const &src);
+		Point(Fixed const X, Fixed const Y);
 		~Point();
+
+		int	getXvalue() const;
+		int	getYvalue() const;
 
 };
 

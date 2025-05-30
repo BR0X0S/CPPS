@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:05:37 by oumondad          #+#    #+#             */
-/*   Updated: 2025/05/29 15:48:08 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/05/30 18:03:25 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,6 +180,6 @@ Fixed Fixed::operator ++ (int)
 Fixed Fixed::operator -- (int)
 {
 	Fixed tmp(*this);
-		--f_value;
+	--f_value;
 	return (tmp);
 }
