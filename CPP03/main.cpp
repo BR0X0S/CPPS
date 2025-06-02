@@ -6,7 +6,15 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:05:06 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/02 15:29:43 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/02 21:50:45 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
+
+int main()
+{
+	ClapTrap Robo("mok");
+	
+	Robo.attack("khaltk");
+}
