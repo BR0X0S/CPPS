@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:05:37 by oumondad          #+#    #+#             */
-/*   Updated: 2025/05/24 18:49:01 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/05/31 19:07:59 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ Fixed::Fixed(): fixed_value(0)
 Fixed::Fixed(Fixed const &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->fixed_value = copy.fixed_value;
+	*this = copy;
 }
 
 Fixed &Fixed::operator = (Fixed const &src)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &src)
-		this->fixed_value = src.fixed_value;
+		this->fixed_value = src.getRawBits();
 	return (*this);
 }
 

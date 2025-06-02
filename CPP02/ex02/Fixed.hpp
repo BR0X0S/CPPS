@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:05:24 by oumondad          #+#    #+#             */
-/*   Updated: 2025/05/30 18:02:52 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/05/31 20:03:35 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,7 @@ class Fixed
 		static Fixed &min(Fixed &fp1, Fixed &fp2);
 		static Fixed const &min(Fixed const &fp1, Fixed const &fp2);
 		static Fixed &max(Fixed &fp1, Fixed &fp2);
-		static const Fixed &max(Fixed const &fp1, Fixed const &fp2);
-		
+		static Fixed const &max(Fixed const &fp1, Fixed const &fp2);
 
 };
 
