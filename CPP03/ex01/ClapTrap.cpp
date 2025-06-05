@@ -6,17 +6,21 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:30:51 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/02 21:53:10 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/05 18:24:14 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(): Name("Wall-E"), HP(10), EP(10), AD(0), MHP(HP)
-{}
+{
+	std::cout << "ClapTrap " << Name << " Default Constructor Called" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name): Name(name), HP(10), EP(10), AD(0), MHP(HP)
-{}
+{	
+	std::cout << "ClapTrap " << Name << " Name Constructor Called" << std::endl;	
+}
 
 ClapTrap &ClapTrap::operator = (const ClapTrap &obj)
 {
@@ -35,7 +39,9 @@ ClapTrap::ClapTrap(const ClapTrap &obj)
 {*this = obj;}
 
 ClapTrap::~ClapTrap()
-{}
+{	
+	std::cout << "ClapTrap " << Name << " Destructor Called" << std::endl;
+}
 
 void ClapTrap::attack(const std::string &target)
 {
