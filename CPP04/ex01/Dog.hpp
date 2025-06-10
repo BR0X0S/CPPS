@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:12:14 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/10 16:25:17 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/10 16:25:59 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Dog: public Animal
 {
 	private:
 
-		
+		Brain		*brain;
 
 	public:
 

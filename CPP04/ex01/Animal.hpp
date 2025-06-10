@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:12:14 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/10 16:08:20 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/10 17:20:27 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Animal
 		Animal();
 		Animal(const Animal &obj);
 		Animal &operator = (const Animal &obj);
-		~Animal();
+		virtual ~Animal();
 
 		virtual void makeSound() const;
 		virtual std::string getType() const;

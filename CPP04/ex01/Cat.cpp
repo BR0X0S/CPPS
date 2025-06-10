@@ -12,12 +12,14 @@
 
 #include "Cat.hpp"
 
-Cat::Cat(): Animal()
+Cat::Cat(): Animal(), brain(new Brain())
 {
+	for (int i = 0; i < 100; i++)
+		brain->setIdea("Ghrrrrr", i);
 	std::cout << "Cat Constructor Called" << std::endl;
 }
 
-Cat::Cat(const Cat &obj)
+Cat::Cat(const Cat &obj): brain(new Brain())
 {
 	*this = obj;
 }
@@ -25,12 +27,16 @@ Cat::Cat(const Cat &obj)
 Cat &Cat::operator = (const Cat &obj)
 {
 	if (this != &obj)
+	{
 		type = obj.type;
+		*brain = *(obj.brain);
+	}
 	return (*this);
 }
 
 Cat::~Cat()
 {
+	delete brain;
 	std::cout << "Cat Destructor Called" << std::endl;
 }
 

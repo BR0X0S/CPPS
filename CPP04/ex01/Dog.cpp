@@ -12,29 +12,35 @@
 
 #include "Dog.hpp"
 
-Dog::Dog(): Animal()
+Dog::Dog(): Animal(), brain(new Brain())
 {
+	for (int i = 0; i < 100; i++)
+		brain->setIdea("Big Bone", i);
 	std::cout << "Dog Constructor Called" << std::endl;
 }
 
-Dog::Dog(const Dog &obj)
+Dog::Dog(const Dog &obj): brain(new Brain)
 {
 	*this = obj;
 }
 
-Dog &Dog::operator = (const Dog &obj)
+Dog	&Dog::operator = (const Dog &obj)
 {
 	if (this != &obj)
+	{
 		type = obj.type;
+		*brain = *(obj.brain);
+	}
 	return (*this);
 }
 
 Dog::~Dog()
 {
+	delete brain;
 	std::cout << "Dog Destructor Called" << std::endl;
 }
 
-void Dog::makeSound() const
+void	Dog::makeSound() const
 {
 	std::cout << "3aw" << std::endl;
 }
