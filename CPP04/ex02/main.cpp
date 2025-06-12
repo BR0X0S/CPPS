@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:05:06 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/11 17:30:22 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/11 17:37:40 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ int main()
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	Animal *k[10];
+
+	// Animal *Messi = new Animal();
+	// Animal Ronaldo;
 
 	for (int i = 0; i < 5; i++)
 		k[i] = new Dog();

@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:11:33 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/10 16:08:30 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/11 17:24:13 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ Animal::~Animal()
 void Animal::makeSound() const
 {
 	std::cout << "????" << std::endl;
+}
+
+void Animal::announceIdeas() const
+{
+	std::cout << "I'm not a type of Animal" << std::endl;
 }
 
 std::string Animal::getType() const

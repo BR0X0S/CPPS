@@ -1,54 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:11:33 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/09 17:36:12 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/09 18:41:56 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongAnimal.hpp"
 
-Dog::Dog(): Animal(), brain(new Brain())
+WrongAnimal::WrongAnimal(): type("Adamonkey")
 {
-	for (int i = 0; i < 100; i++)
-		brain->setIdea("Big Bone", i);
-	std::cout << "Dog Constructor Called" << std::endl;
+	std::cout << "WrongAnimal Default Constructor Called" << std::endl;
 }
 
-Dog::Dog(const Dog &obj): brain(new Brain)
+WrongAnimal::WrongAnimal(std::string Type): type(Type)
+{
+	std::cout << "WrongAnimal Name Constructor Called" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(const WrongAnimal &obj)
 {
 	*this = obj;
 }
 
-Dog	&Dog::operator = (const Dog &obj)
+WrongAnimal &WrongAnimal::operator = (const WrongAnimal &obj)
 {
 	if (this != &obj)
-	{
 		type = obj.type;
-		*brain = *(obj.brain);
-	}
 	return (*this);
 }
 
-Dog::~Dog()
+WrongAnimal::~WrongAnimal()
 {
-	delete brain;
-	std::cout << "Dog Destructor Called" << std::endl;
+	std::cout << "WrongAnimal Destructor Called" << std::endl;
 }
 
-void	Dog::makeSound() const
+void WrongAnimal::makeSound() const
 {
-	std::cout << "3aw" << std::endl;
+	std::cout << "????" << std::endl;
 }
 
-void Dog::announceIdeas() const
+std::string WrongAnimal::getType() const
 {
-	std::cout << "++++++++++++++++++++++++++++++++" << std::endl;
-	for (int i = 0; i < 5; i++)
-		std::cout << brain->getIdea(i) << std::endl;
-	std::cout << "++++++++++++++++++++++++++++++++" << std::endl;
+	return (type);
 }

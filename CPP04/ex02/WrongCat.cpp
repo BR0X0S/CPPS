@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,45 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog(): Animal(), brain(new Brain())
+WrongCat::WrongCat(): WrongAnimal("WrongCat"), Name("Ms3oud")
 {
-	for (int i = 0; i < 100; i++)
-		brain->setIdea("Big Bone", i);
-	std::cout << "Dog Constructor Called" << std::endl;
+	std::cout << "WrongCat Constructor Called" << std::endl;
 }
 
-Dog::Dog(const Dog &obj): brain(new Brain)
+WrongCat::WrongCat(std::string name): WrongAnimal("WrongCat"), Name(name)
+{
+	std::cout << "WrongCat Name Constructor Called" << std::endl;
+}
+
+WrongCat::WrongCat(const WrongCat &obj)
 {
 	*this = obj;
 }
 
-Dog	&Dog::operator = (const Dog &obj)
+WrongCat &WrongCat::operator = (const WrongCat &obj)
 {
 	if (this != &obj)
-	{
 		type = obj.type;
-		*brain = *(obj.brain);
-	}
 	return (*this);
 }
 
-Dog::~Dog()
+WrongCat::~WrongCat()
 {
-	delete brain;
-	std::cout << "Dog Destructor Called" << std::endl;
+	std::cout << "WrongCat Destructor Called" << std::endl;
 }
 
-void	Dog::makeSound() const
+void WrongCat::makeSound() const
 {
-	std::cout << "3aw" << std::endl;
+	std::cout << "Myaw" << std::endl;
 }
 
-void Dog::announceIdeas() const
-{
-	std::cout << "++++++++++++++++++++++++++++++++" << std::endl;
-	for (int i = 0; i < 5; i++)
-		std::cout << brain->getIdea(i) << std::endl;
-	std::cout << "++++++++++++++++++++++++++++++++" << std::endl;
-}

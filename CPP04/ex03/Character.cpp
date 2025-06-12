@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/09 17:12:14 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/11 18:16:48 by oumondad         ###   ########.fr       */
+/*   Created: 2025/06/11 20:25:12 by oumondad          #+#    #+#             */
+/*   Updated: 2025/06/12 16:34:20 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "Character.hpp"
 
-#include <iostream>
-
-class Animal
+std::string const& Character::getName() const
 {
-	protected:
+    return (name);
+}
 
-		std::string type;
+Character::Character(std::string Name): name(Name)
+{}
 
-	public:
-	
-		Animal();
-		Animal(const Animal &obj);
-		Animal &operator = (const Animal &obj);
-		virtual ~Animal();
+Character::Character(): name("Adam")
+{}
 
-		virtual void makeSound() const;
-		virtual void announceIdeas() const;
-		std::string getType() const;
+void Character::equip(AMateria* m)
+{
+    
+}
 
-};
+void Character::unequip(int idx)
+{
+    
+}
 
-#endif
+void Character::use(int idx, ICharacter& target)
+{
+    
+}
+

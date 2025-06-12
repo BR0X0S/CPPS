@@ -1,54 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:11:33 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/09 17:36:12 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/11 17:32:37 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
 
-Dog::Dog(): Animal(), brain(new Brain())
+Animal::Animal(): type("Adamonkey")
 {
-	for (int i = 0; i < 100; i++)
-		brain->setIdea("Big Bone", i);
-	std::cout << "Dog Constructor Called" << std::endl;
+	std::cout << "Animal Default Constructor Called" << std::endl;
 }
 
-Dog::Dog(const Dog &obj): brain(new Brain)
+Animal::Animal(const Animal &obj)
 {
 	*this = obj;
 }
 
-Dog	&Dog::operator = (const Dog &obj)
+Animal &Animal::operator = (const Animal &obj)
 {
 	if (this != &obj)
-	{
 		type = obj.type;
-		*brain = *(obj.brain);
-	}
 	return (*this);
 }
 
-Dog::~Dog()
+Animal::~Animal()
 {
-	delete brain;
-	std::cout << "Dog Destructor Called" << std::endl;
+	std::cout << "Animal Destructor Called" << std::endl;
 }
 
-void	Dog::makeSound() const
+
+void Animal::announceIdeas() const
 {
-	std::cout << "3aw" << std::endl;
+	std::cout << "I'm not a type of Animal" << std::endl;
 }
 
-void Dog::announceIdeas() const
+std::string Animal::getType() const
 {
-	std::cout << "++++++++++++++++++++++++++++++++" << std::endl;
-	for (int i = 0; i < 5; i++)
-		std::cout << brain->getIdea(i) << std::endl;
-	std::cout << "++++++++++++++++++++++++++++++++" << std::endl;
+	return (type);
 }
