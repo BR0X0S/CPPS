@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 16:34:57 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/13 19:46:04 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/14 16:51:17 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,24 @@ MateriaSource::~MateriaSource()
 
 void MateriaSource::learnMateria(AMateria* mat)
 {
-	for (int i = 0; i < 4; i++)
+	if (!mat)
 	{
-		if (materias[i] == NULL && mat)
-			materias[i] = mat->clone();
+		std::cout << "Invalid Materia!"<< std::endl;
 		return ;
 	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (materias[i] == NULL)
+		{
+			materias[i] = mat->clone();
+			std::cout << "Learned Materia: " << mat->getType() << std::endl;
+			delete mat;
+			return ;
+		}
+	}
+	std::cout << "Slots are Full!"<< std::endl;
+	delete mat;
+	return ;
 }
 
 AMateria *MateriaSource::createMateria(std::string const & type)

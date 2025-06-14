@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 20:25:12 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/13 19:44:11 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:12:56 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ std::string const& Character::getName() const
 	return (name);
 }
 
-Character::Character(std::string Name): name(Name), j(0)
+Character::Character(std::string Name): name(Name)
 {
 	for (int i = 0; i < 4; i++)
 		Spell[i] = NULL;
 	std::cout << "Character Name " << name << " Name Constructor Called! " << std::endl;
 }
 
-Character::Character(): name("Adam"), j(0)
+Character::Character(): name("Adam")
 {
 	for (int i = 0; i < 4; i++)
 		Spell[i] = NULL;
@@ -43,7 +43,6 @@ Character &Character::operator = (const Character &obj)
 	if (this != &obj)
 	{
 		name = obj.name;
-		j = obj.j;
 		for (int i = 0; i < 4; i++)
 		{
 			if (Spell[i] != NULL)
@@ -56,8 +55,6 @@ Character &Character::operator = (const Character &obj)
 		{
 			if (obj.Spell[i])
 				Spell[i] = obj.Spell[i]->clone();
-			else
-				Spell[i] = NULL;
 		}
 	}
 	return (*this);
@@ -79,7 +76,7 @@ void Character::equip(AMateria* m)
 	int x = 0;
 	if (!m)
 	{
-		std::cout << "m kharia" << std::endl;
+		std::cout << "Invalid Materia!" << std::endl;
 		return ;
 	}
 	while (x < 4)
@@ -88,18 +85,19 @@ void Character::equip(AMateria* m)
 		{
 			Spell[x] = m;
 			std::cout << "Character Name " << name << " Equped a " << m->getType() << " Materia" << std::endl;
-			j++;
 			return ;
 		}
 		x++;
 	}
 	std::cout << "Character Name " << name << " has full Materia slots!" << std::endl;
+	// Drop on the floor;
 }
 
 void Character::unequip(int idx)
 {
-	if (idx > j)
+	if (idx < 0 || idx > 4 || !Spell[idx])
 		return ;
+	// Drop on the floor;
 	Spell[idx] = NULL;
 	std::cout << "Character Name " << name << " Unequipped its Materia " << std::endl;
 }

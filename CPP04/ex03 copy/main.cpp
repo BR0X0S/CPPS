@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 17:43:51 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/13 20:55:07 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:14:28 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-
 
 int	main(void)
 {
@@ -107,7 +106,7 @@ int	main(void)
 		std::cout << "------------------------------------------" << std::endl;
 		npc3->unequip(1);
 		npc3->unequip(1);					// Empty Belt Slot!
-		npc3->unequip(8);					// Invalid Belt Slot!
+		npc3->unequip(-1000);					// Invalid Belt Slot!
 		std::cout << "------------------------------------------" << std::endl;
 		tmp = src->createMateria("cure");
 		npc3->equip(tmp);					// Should be Equipped at Slot 1

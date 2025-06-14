@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 20:26:11 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/13 16:33:18 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:12:08 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class	Character: public ICharacter
 
 		std::string	name;
 		AMateria	*Spell[4];
-		int			j;
 
 	public:
 
