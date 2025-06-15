@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 18:36:41 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/11 20:15:23 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/13 16:37:09 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 #define ICE_HPP
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
+
 
 class	Ice: public AMateria
 {
-	private:
-
-		std::string name;
-
 	public:
 		
 		Ice();

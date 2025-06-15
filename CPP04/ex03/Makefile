@@ -6,7 +6,7 @@
 #    By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 11:29:03 by oumondad          #+#    #+#              #
-#    Updated: 2025/06/15 19:03:16 by oumondad         ###   ########.fr        #
+#    Updated: 2025/06/15 17:06:05 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC			= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp G
 OBJ			= ${SRC:.cpp=.o}
 
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 
-# CXXFLAGS	+= -fsanitize=address -g3
+CXXFLAGS	+= -fsanitize=address -g3
 
 CXX			= c++
 

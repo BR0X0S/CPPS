@@ -6,14 +6,15 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 20:26:11 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/14 17:12:08 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/15 16:52:10 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
-#include "AMateria.hpp"
+// #include "AMateria.hpp"
+#include "GCollector.hpp"
 #include "ICharacter.hpp"
 #include <iostream>
 

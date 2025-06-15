@@ -6,11 +6,15 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 20:25:12 by oumondad          #+#    #+#             */
-/*   Updated: 2025/06/14 17:12:56 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/06/15 18:58:17 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+
+GCollector CallDestructor;
+GCollector *head = NULL;
+
 
 std::string const& Character::getName() const
 {
@@ -91,6 +95,7 @@ void Character::equip(AMateria* m)
 	}
 	std::cout << "Character Name " << name << " has full Materia slots!" << std::endl;
 	// Drop on the floor;
+	Collect_materia(m);
 }
 
 void Character::unequip(int idx)
@@ -98,6 +103,7 @@ void Character::unequip(int idx)
 	if (idx < 0 || idx > 4 || !Spell[idx])
 		return ;
 	// Drop on the floor;
+	Collect_materia(Spell[idx]);
 	Spell[idx] = NULL;
 	std::cout << "Character Name " << name << " Unequipped its Materia " << std::endl;
 }
