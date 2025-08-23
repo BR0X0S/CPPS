@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:34:29 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/23 00:42:00 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/23 18:36:43 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,13 @@ void Bureaucrat::executeForm(AForm const & form)
 	
 }
 
+const char *Bureaucrat::GradeTooHighException::what()  const throw()
+{return "Bureaucrat Grade is Too High";}
+
+const char *Bureaucrat::GradeTooLowException::what()  const throw()
+{return "Bureaucrat Grade is Too Low";}
+
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Buraucrat " << name << " destructor called" << std::endl;
+	std::cout << "Bureaucrat " << name << " destructor called" << std::endl;
 }

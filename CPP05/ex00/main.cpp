@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:33:27 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/21 16:17:16 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/23 18:47:16 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
         Bureaucrat b;
         std::cout << b << std::endl;
         Bureaucrat c("hamid", 200);
-        std::cout << "Bureaucrat " << c.getName() << " has the grad " << c.getGrade() << std::endl;;
+        std::cout << "Bureaucrat " << c.getName() << " has the grad " << c.getGrade() << std::endl;
     }
     catch(const std::exception& e)
     {

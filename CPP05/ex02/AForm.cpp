@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 22:40:13 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/22 23:12:20 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/23 18:31:45 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,26 @@ AForm	&AForm::operator = (const AForm &obj)
     if (this != &obj)
         this->isSigned = obj.isSigned;
     return (*this);
+}
+
+const char *AForm::GradeTooHighException::what() const throw()
+{
+    return "Grade too High!";
+}
+
+const char *AForm::GradeTooLowException::what() const throw()
+{
+    return "Grade too Low!";
+}
+
+const char *AForm::NotSigned::what() const throw()
+{
+    return "Form is Not Signed!";
+}
+
+const char *AForm::AlreadySigned::what() const throw()
+{
+    return "Form is Already Signed!";
 }
 
 AForm::~AForm()

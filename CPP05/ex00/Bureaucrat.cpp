@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:34:29 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/22 22:09:13 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/23 18:46:57 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,17 @@ Bureaucrat	&Bureaucrat::operator = (const Bureaucrat &obj)
     return (*this);
 }
 
+const char *Bureaucrat::GradeTooHighException::what()  const throw()
+{
+    return "Bureaucrat Grade is Too High";
+}
+
+const char *Bureaucrat::GradeTooLowException::what()  const throw()
+{
+    return "Bureaucrat Grade is Too Low";
+}
+
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "distructor called" << std::endl;
+    std::cout << "Bureaucrat " << name << " destructor called" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 22:40:02 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/22 22:14:09 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/23 18:53:32 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,24 +44,18 @@ class Form
 		
 		class GradeTooHighException : public std::exception
 		{
-			const char *what() const throw()
-			{
-				return "Grade too High!";
-			}
+			public:
+				const char *what()  const throw();
 		};
 		class GradeTooLowException : public std::exception
 		{
-			const char *what() const throw()
-			{
-				return "Grade too Low!";
-			}
+			public:
+				const char *what()  const throw();
 		};
 		class AlreadySigned : public std::exception
 		{
-			const char *what() const throw()
-			{
-				return "Form is already Signed!";
-			}
+			public:
+				const char *what()  const throw();
 		};
 };
 

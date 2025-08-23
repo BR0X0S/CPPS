@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:33:27 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/22 22:39:23 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/23 18:58:56 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ int main()
 {
     try
     {
-        // Bureaucrat a("oussama", 1);
-        // std::cout << "Bureaucrat " << a.getName() << " has the grad " << a.getGrade() << std::endl;
-        // Form x;
-        // std::cout << x << std::endl;
-        // Form y("to be ohammou", 150, 150);
-        // a.signForm(y);
-        // a.signForm(y);
+        Bureaucrat a("oussama", 1);
+        std::cout << "Bureaucrat " << a.getName() << " has the grad " << a.getGrade() << std::endl;
+        Form x;
+        std::cout << x << std::endl;
+        Form y("to be ohammou", 150, 150);
+        a.signForm(y);
+        a.signForm(y);
+        std::cout << y << std::endl;
+    
         Bureaucrat A;
         Bureaucrat B("Hamid", 9);
         Bureaucrat C(B);
@@ -41,5 +43,4 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
-    
 }

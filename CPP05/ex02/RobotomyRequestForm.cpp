@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 21:15:40 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/23 17:29:19 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/23 18:23:08 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,22 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		std::cout << _target << "has been robotomized" << std::endl;
 	else
 		std::cout << _target << "robotomized faild" << std::endl;
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj): AForm(obj), _target(obj._target)
+{}
+
+RobotomyRequestForm &RobotomyRequestForm::operator = (const RobotomyRequestForm &obj)
+{
+	if (this != &obj)
+	{
+		_target = obj._target;
+		AForm::operator=(obj);
+	}
+	return (*this);
+}
+
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+	std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
