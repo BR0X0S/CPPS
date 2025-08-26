@@ -6,14 +6,14 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 21:15:40 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/23 18:23:08 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/25 16:04:47 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("Robot", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("Robotomy Request", 72, 45), _target(target)
 {}
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
@@ -27,9 +27,9 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	int result = std::rand() % 2;
 
 	if (result)
-		std::cout << _target << "has been robotomized" << std::endl;
+		std::cout << _target << " has been robotomized" << std::endl;
 	else
-		std::cout << _target << "robotomized faild" << std::endl;
+		std::cout << _target << " robotomized failed" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj): AForm(obj), _target(obj._target)

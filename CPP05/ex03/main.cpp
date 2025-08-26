@@ -6,54 +6,33 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:33:27 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/23 19:17:34 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/25 16:22:24 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
 	try
 	{
+		Intern hmmo;
 		Bureaucrat A("oussama", 1);
-		Bureaucrat B;
-		Bureaucrat C("Missi", 45);
-	
-		std::cout << "\ntest shrubbery\n" << std::endl;
-			ShrubberyCreationForm X("home");
-			A.signForm(X);
-			A.executeForm(X);
-			B.executeForm(X);
-	
-		std::cout << "\ntest robotomized\n" << std::endl;
+		Bureaucrat B("Missi", 2);
+		Bureaucrat C;
 
-			RobotomyRequestForm Y("alitta");
-			A.signForm(Y);
-			C.executeForm(Y);
-			A.executeForm(Y);
-			B.executeForm(Y);
-
-		std::cout << "\ntest Pardoned\n" << std::endl;
-
-			PresidentialPardonForm Z("7mo");
-			A.signForm(Z);
-			PresidentialPardonForm ZZ("hamid");
-			ZZ = Z;
-			A.executeForm(Z);
-			A.executeForm(ZZ);
-
-		std::cout << "\ntest error\n" << std::endl;
-
-			ShrubberyCreationForm E("error");
-			B.signForm(E);
-			C.executeForm(E);
-			A.executeForm(E);
+		AForm *roboForm;
+		AForm *shrubForm;
+		// AForm *presForm;
 		
-		std::cout << "\n\n\n" <<std::endl;
+		roboForm = hmmo.makeForm("robotomy request", "Bender");
+		shrubForm = hmmo.makeForm("shrubbery creation", "Home");
+	
+		roboForm->beSigned(A);
+		shrubForm->beSigned(B);
+		// presForm->beSigned(A);
+		
 	}
 	catch(const std::exception& e)
 	{
