@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:33:27 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/25 16:22:24 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/29 17:28:49 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ int main()
 
 		AForm *roboForm;
 		AForm *shrubForm;
-		// AForm *presForm;
+		AForm *presForm;
 		
 		roboForm = hmmo.makeForm("robotomy request", "Bender");
 		shrubForm = hmmo.makeForm("shrubbery creation", "Home");
 	
 		roboForm->beSigned(A);
 		shrubForm->beSigned(B);
-		// presForm->beSigned(A);
+		presForm->beSigned(A);
 		
 	}
 	catch(const std::exception& e)

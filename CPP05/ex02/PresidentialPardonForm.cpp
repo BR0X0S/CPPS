@@ -6,11 +6,14 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 21:16:15 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/23 18:02:07 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/29 17:23:28 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+
+PresidentialPardonForm::PresidentialPardonForm(): AForm("Presidential", 25, 5), _target("default")
+{}
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm("Presidential", 25, 5), _target(target)
 {}

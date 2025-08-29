@@ -6,12 +6,15 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 21:15:40 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/25 16:04:47 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/29 17:26:42 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
+
+RobotomyRequestForm::RobotomyRequestForm(): AForm("Robotomy Request", 72, 45), _target("default")
+{}
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("Robotomy Request", 72, 45), _target(target)
 {}

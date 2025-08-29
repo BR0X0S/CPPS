@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 21:15:23 by oumondad          #+#    #+#             */
-/*   Updated: 2025/08/23 18:25:07 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/08/29 17:26:31 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class RobotomyRequestForm : public AForm
 
 	public:
 
+		RobotomyRequestForm();
 		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(const RobotomyRequestForm &obj);
 		RobotomyRequestForm &operator = (const RobotomyRequestForm &obj);
