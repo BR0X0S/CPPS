@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 22:40:40 by oumondad          #+#    #+#             */
-/*   Updated: 2025/10/26 19:16:12 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:52:26 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ int main()
 	const std::vector<int> cVec(vec);
 
 	std::vector<int>::const_iterator cit = easyfind(cVec, 1);
-	if (*cit)
+	if (cit != cVec.end())
 		std::cout << "Found : " << *cit << " in const vector" << std::endl;
 	else
 		std::cout << "Didn't found the target in const vector" << std::endl;
-	
 }
