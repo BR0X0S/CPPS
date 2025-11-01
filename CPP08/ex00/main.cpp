@@ -6,13 +6,13 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 22:40:40 by oumondad          #+#    #+#             */
-/*   Updated: 2025/10/30 17:52:26 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:35:01 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <vector>
-#include "MutantStack.hpp"
+#include "easyfind.hpp"
 
 int main()
 {
@@ -21,6 +21,7 @@ int main()
 	vec.push_back(1);
 	vec.push_back(2);
 	vec.push_back(3);
+	vec.push_back(9);
 	vec.push_back(4);
 
 	std::vector<int>::iterator it = easyfind(vec, 5);
@@ -30,7 +31,7 @@ int main()
 		std::cout << "Didn't found the target " <<  std::endl;
 	const std::vector<int> cVec(vec);
 
-	std::vector<int>::const_iterator cit = easyfind(cVec, 1);
+	std::vector<int>::const_iterator cit = easyfind(cVec, 9);
 	if (cit != cVec.end())
 		std::cout << "Found : " << *cit << " in const vector" << std::endl;
 	else

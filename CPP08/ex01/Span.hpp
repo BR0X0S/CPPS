@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:56:47 by oumondad          #+#    #+#             */
-/*   Updated: 2025/10/30 19:08:26 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:16:46 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Span
 		void	addNumber(unsigned int nbr);
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
+		void	addRange(std::multiset<int>::iterator begin, std::multiset<int>::iterator end);
 		~Span();
 };
 

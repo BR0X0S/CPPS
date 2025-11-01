@@ -5,45 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 19:05:47 by oumondad          #+#    #+#             */
-/*   Updated: 2025/11/01 22:31:27 by oumondad         ###   ########.fr       */
+/*   Created: 2025/11/01 18:51:59 by oumondad          #+#    #+#             */
+/*   Updated: 2025/11/01 22:13:02 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
-
-void testAddRange()
-{
-	Span sp = Span(5);
-	int arr[] = {1, 3, 4, 6, 7};
-	std::multiset<int> range(arr, arr + 5);
-	
-	sp.addRange(range.begin(), range.end());
-
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
-}
+#include "MutantStack.hpp"
 
 int main()
 {
-	try
+	MutantStack<int> mstack;
+
+	mstack.push(5);
+	mstack.push(17);
+
+	std::cout << mstack.top() << std::endl;
+
+	mstack.pop();
+
+	std::cout << mstack.size() << std::endl;
+
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+
+	++it;
+	--it;
+	while (it != ite)
 	{
-		Span sp = Span(5);
-
-
-		sp.addNumber(6);
-		sp.addNumber(3);
-		sp.addNumber(9);
-		sp.addNumber(17);
-		sp.addNumber(11);
-
-				
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
-		
+		std::cout << *it << std::endl;
+		++it;
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	std::stack<int> s(mstack);
+	return 0;
 }

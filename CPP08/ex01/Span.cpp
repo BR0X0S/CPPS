@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:56:44 by oumondad          #+#    #+#             */
-/*   Updated: 2025/10/30 19:55:14 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:18:28 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,13 @@ unsigned int Span::longestSpan()
 	it = n.end();
 	it--;
 	return (*it - x);
+}
+
+void	Span::addRange(std::multiset<int>::iterator begin, std::multiset<int>::iterator end)
+{
+	while(begin != end)
+	{
+		addNumber(*begin);
+		begin++;
+	}
 }

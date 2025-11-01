@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MutantStack.hpp                                    :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 22:41:58 by oumondad          #+#    #+#             */
-/*   Updated: 2025/10/26 18:43:27 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:33:07 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MUTANTSTACK_HPP
-#define MUTANTSTACK_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
 #include <algorithm>
 
