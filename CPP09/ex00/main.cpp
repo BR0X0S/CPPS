@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:49:02 by oumondad          #+#    #+#             */
-/*   Updated: 2025/11/20 23:05:20 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/11/22 17:59:55 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int main(int ac, char** av)
         Btc exchange(av[1]);
         // Btc exchange;
         // print data
-        for (std::map<std::string, float>::iterator it = exchange.data.begin(); it != exchange.data.end(); ++it)
-        {
-            std::cout << it->first << " => " << it->second << std::endl;
-        }
+        // for (std::map<std::string, float>::iterator it = exchange.data.begin(); it != exchange.data.end(); ++it)
+        // {
+        //     std::cout << it->first << " => " << it->second << std::endl;
+        // }
         // print input
         // for (std::map<std::string, float>::iterator it = exchange.input.begin(); it != exchange.input.end(); ++it)
         // {

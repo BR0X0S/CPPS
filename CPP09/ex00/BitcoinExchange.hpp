@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 18:17:35 by oumondad          #+#    #+#             */
-/*   Updated: 2025/11/20 23:43:16 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/11/22 20:17:54 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,20 @@
 class Btc
 {
 	private:
-
 	
+		std::map<std::string, float> data;
+		Btc();
+
 	public:
-			std::map<std::string, float> data;
-		std::map<std::string, float> input;
 
 		Btc(std::string inputFile);
-		// Btc();
+		Btc(const Btc& other);
+		Btc& operator=(const Btc& other);
 		~Btc();
+
 		void	fillData();
 		void	parceInput(const std::string inputFile);
 		double	checkData(std::string date, std::string value);
-		
-		
-		
 };
 
 
