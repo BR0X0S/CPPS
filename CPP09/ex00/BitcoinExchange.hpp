@@ -6,17 +6,19 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 18:17:35 by oumondad          #+#    #+#             */
-/*   Updated: 2025/11/22 20:17:54 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/11/22 21:43:08 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BITCOINEXCHANGE_HPP
 #define BITCOINEXCHANGE_HPP
 
-#include <iostream>
+#include <map>
+#include <sstream>
 #include <fstream>
 #include <cstdlib>
-#include <map>
+#include <iostream>
+#include <algorithm>
 
 class Btc
 {

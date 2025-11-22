@@ -6,12 +6,11 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 18:17:24 by oumondad          #+#    #+#             */
-/*   Updated: 2025/11/22 20:21:04 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/11/22 21:42:49 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-#include <algorithm>
 
 Btc::Btc(std::string inputFile)
 {
@@ -53,6 +52,17 @@ void Btc::fillData()
 	}
 }
 
+void removeSpaces(std::string& str)
+{
+	size_t start = 0;
+	while (start < str.length() && isspace(str[start]))
+		start++;
+	size_t end = str.length();
+	while (end > start && isspace(str[end - 1]))
+		end--;
+	str = str.substr(start, end - start);
+}
+
 void Btc::parceInput(const std::string inputFile)
 {
 	std::ifstream File(inputFile.c_str());
@@ -64,7 +74,7 @@ void Btc::parceInput(const std::string inputFile)
 	std::string line;
 	std::string date;
 	std::string value;
-
+	
 	getline(File, line);
 	while(getline(File, line))
 	{
@@ -73,9 +83,10 @@ void Btc::parceInput(const std::string inputFile)
 			size_t pos = line.find('|');
 			if (pos == std::string::npos)
 				throw std::runtime_error("Error: bad input => " + line);
-
-			value = line.substr(pos + 2);
-			date = line.substr(0, pos - 1);
+			date = line.substr(0, pos);
+			value = line.substr(pos + 1);
+			removeSpaces(date);
+			removeSpaces(value);
 			double nbr = checkData(date, value);
 			if (data.empty())
 				throw std::runtime_error("Error: data.csv is empty");
@@ -95,15 +106,17 @@ bool parceDate(std::string date)
 {
 	if (date[4] != '-' || date[7] != '-' || date.length() != 10)
 		return (false);
-	std::string month = date.substr(5, 2);
-	std::string day = date.substr(8, 2);
-	int imonth = atoi(month.c_str());
-	int iday = atoi(day.c_str());
-	if ((imonth <= 0 || imonth > 12) || (iday <= 0 || iday > 31))
-		return false;
-	if ((imonth == 2 && iday > 29))
-		return false;
-	return true;
+
+	std::stringstream ss(date);
+	int day = 0, month = 0, year = 0;
+	char hiphen, hiphen1;
+
+	ss >> year >> hiphen >> month >> hiphen1 >> day;
+	if (year < 2009 || hiphen != '-' || hiphen1 != '-' || month < 1 || month > 12 || day < 1 || day > 31)
+		return (false);
+	if (month == 2 && day > 29)
+		return (false);
+	return (true);
 }
 
 double	Btc::checkData(std::string date, std::string value)
