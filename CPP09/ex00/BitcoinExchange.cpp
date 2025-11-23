@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 18:17:24 by oumondad          #+#    #+#             */
-/*   Updated: 2025/11/22 21:42:49 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/11/23 22:32:28 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void Btc::parceInput(const std::string inputFile)
 
 bool parceDate(std::string date)
 {
-	if (date[4] != '-' || date[7] != '-' || date.length() != 10)
+	if (date.length() != 10 || date[4] != '-' || date[7] != '-')
 		return (false);
 
 	std::stringstream ss(date);
@@ -123,14 +123,11 @@ double	Btc::checkData(std::string date, std::string value)
 {
 	if (!parceDate(date))
 		throw std::runtime_error("Error: invalid date => " + date);
-	double nbr = std::atof(value.c_str());
-	size_t pos = value.find(".");
-	if (nbr == 1000 && pos != std::string::npos)
-	{
-		std::string val = value.substr(pos + 1);
-		if (val.find_first_not_of("0"))
-			nbr = 1001;
-	}
+	std::stringstream ss(value);
+	double nbr;
+	ss >> nbr;
+	if (!ss.eof())
+		throw std::runtime_error("Error: Wrong value.");
 	if (nbr > 1000)
 		throw std::runtime_error("Error: too large a number.");
 	if (nbr < 0)
