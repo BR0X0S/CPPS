@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/22 20:31:28 by oumondad          #+#    #+#             */
-/*   Updated: 2025/11/30 17:07:39 by oumondad         ###   ########.fr       */
+/*   Created: 2025/12/08 16:43:16 by oumondad          #+#    #+#             */
+/*   Updated: 2025/12/08 20:55:48 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#ifndef PMERGEME_HPP
+#define PMERGEME_HPP
 
-int main(int ac, char **av)
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <ctime>
+#include <sstream>
+#include <limits.h>
+
+
+
+struct PmergeMe
 {
-	try
-	{
-		if (ac != 2)
-			throw (std::runtime_error("wrong args"));
-		Rpn calc;
-		
-		calc.calculate(av[1]);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-}
+	void sortVector(std::vector<int>& vec);
+	void sortDeque(std::deque<int>& deq);
+};
+
+
+#endif
