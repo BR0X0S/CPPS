@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:32:08 by oumondad          #+#    #+#             */
-/*   Updated: 2025/12/08 22:05:35 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/12/09 22:47:30 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,40 @@ int main(int ac, char **av)
 	algo.sortVector(vec);
 	
 
-	for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); it++)
-		std::cout << *it << ' ';
+	// for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); it++)
+	// 	std::cout << *it << ' ';
 }
+
+
+
+// std::vector<int> PmergeMe::_jacobsthalSequence(size_t num)
+// { // J(n) = J(n-1) + 2 * J(n-2)
+// 	std::vector<int> jacobsthal;
+// 	jacobsthal.push_back(0);
+// 	jacobsthal.push_back(1);
+// 	for(size_t i = 2; i <= num; i++){
+// 		size_t next = jacobsthal[i - 1] + 2 * jacobsthal[i - 2];
+// 		if (next >= num)
+// 			break;
+// 		jacobsthal.push_back(next);
+// 	}
+// 	return jacobsthal;
+// }
+
+// std::vector<int> PmergeMe::_insertionSequence(size_t num)
+// {
+// 	std::vector<int> insertionSeq;
+// 	std::vector<int> jacobsthal = _jacobsthalSequence(num);
+
+// 	int lastJacobIndex = 1;
+// 	for(size_t i = 3; i < jacobsthal.size(); i++){
+// 		int currJacobIndex = jacobsthal[i];
+// 		for (int j = currJacobIndex; j > lastJacobIndex; j--)
+// 			insertionSeq.push_back(j);
+// 		lastJacobIndex = currJacobIndex;
+// 	}
+// 	for(int i = num; i > lastJacobIndex; i--)
+// 		insertionSeq.push_back(i);
+
+// 	return insertionSeq;
+// }
