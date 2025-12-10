@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:43:05 by oumondad          #+#    #+#             */
-/*   Updated: 2025/12/09 22:56:24 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/12/10 18:40:42 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ std::vector<int> PmergeMe::insertPlace(int max)
 	std::vector<int> nbrs = jecobNbrGen(max);
 
 	int lastIndex = 1;
-	for (size_t i = 3; i < nbrs.size(); i++) // 5 --> 5 2 6 7 1 // i = 3 -> curr = 3 // 1, 3, 5, 11, 21, 43, 85, 171, 341, 683, 1365, 2731, 5461, 10923, 21845
+	for (size_t i = 3; i < nbrs.size(); i++)
 	{
 		int currIndex = nbrs[i];
 		for (int j = currIndex; j > lastIndex; j--)
@@ -48,7 +48,6 @@ std::vector<int> PmergeMe::insertPlace(int max)
 	{
 		insertPose.push_back(i);
 	}
-
 	return (insertPose);
 }
 
@@ -66,7 +65,7 @@ void PmergeMe::sortVector(std::vector<int> &vec)
 	{
 		x = vec.back();
 		vec.pop_back();
-	}    
+	}
 	for(int i = 0; i < (int)vec.size(); i += 2)
 	{
 		if (vec[i] < vec[i + 1])
@@ -74,16 +73,9 @@ void PmergeMe::sortVector(std::vector<int> &vec)
 		else
 			pairs.push_back(std::pair<int, int>(vec[i + 1], vec[i]));
 	}
-	
 	for(int i = 0; i < (int)pairs.size(); i++)
 		bigNumbers.push_back(pairs[i].second);
 	sortVector(bigNumbers);
-
-		// std::cout << "DEBUG: Large elements after sort: ";
-		// for(size_t i = 0; i < bigNumbers.size(); i++)
-		// 	std::cout << bigNumbers[i] << " ";
-		// std::cout << std::endl;
-
 	for (int i = 0; i < (int)bigNumbers.size(); i++)
 	{
 		for(int j = 0; j < (int)pairs.size(); j++)
@@ -96,26 +88,74 @@ void PmergeMe::sortVector(std::vector<int> &vec)
 		}
 	}
 	bigNumbers.insert(bigNumbers.begin(), smallNumbers[0]);
-	
-
-	std::cout << "DEBUG: Small elements after sort: ";
-	for(size_t i = 0; i < smallNumbers.size(); i++)
-		std::cout << smallNumbers[i] << " ";
-	std::cout << std::endl;
-	
-	std::cout << "DEBUG: Large elements after sort: ";
-	for(size_t i = 0; i < bigNumbers.size(); i++)
-		std::cout << bigNumbers[i] << " ";
-	std::cout << std::endl;
-	std::cout << "lba9i = " << x << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	
-
 	std::vector<int> insertPose = insertPlace(smallNumbers.size());
-	for (std::vector<int>::iterator it = insertPose.begin(); it != insertPose.end(); it++)
-		std::cout << *it << " | ";
+	for (size_t i = 0; i < insertPose.size(); i++)
+	{
+		int pose = insertPose[i];
+		int nbrToInsert = smallNumbers[pose - 1];
+		std::vector<int>::iterator it =  std::lower_bound(bigNumbers.begin(), bigNumbers.end(), nbrToInsert);
+		bigNumbers.insert(it, nbrToInsert);
+	}
+	if (x != -1)
+	{
+		std::vector<int>::iterator it =  std::lower_bound(bigNumbers.begin(), bigNumbers.end(), x);
+		bigNumbers.insert(it, x);
+	}
+	vec = bigNumbers;
+}
 
 
+void	PmergeMe::sortDeque(std::deque<int> &deque)
+{
+	if (deque.size() <= 1)
+		return ;
+
+	int x = -1;
+	std::deque<std::pair<int, int> > pairs;
+	std::deque<int> bigNumbers;
+	std::deque<int> smallNumbers;
+
+	if (deque.size() % 2 != 0)
+	{
+		x = deque.back();
+		deque.pop_back();
+	}
+	for(int i = 0; i < (int)deque.size(); i += 2)
+	{
+		if (deque[i] < deque[i + 1])
+			pairs.push_back(std::pair<int, int>(deque[i], deque[i + 1]));
+		else
+			pairs.push_back(std::pair<int, int>(deque[i + 1], deque[i]));
+	}
+	for(int i = 0; i < (int)pairs.size(); i++)
+		bigNumbers.push_back(pairs[i].second);
+	sortDeque(bigNumbers);
+	for (int i = 0; i < (int)bigNumbers.size(); i++)
+	{
+		for(int j = 0; j < (int)pairs.size(); j++)
+		{
+			if (bigNumbers[i] == pairs[j].second)
+			{
+				smallNumbers.push_back(pairs[j].first);
+				break;
+			}
+		}
+	}
+
+	bigNumbers.insert(bigNumbers.begin(), smallNumbers[0]);
+	std::vector<int> insertPose = insertPlace(smallNumbers.size());
+	for (size_t i = 0; i < insertPose.size(); i++)
+	{
+		int pose = insertPose[i];
+		int nbrToInsert = smallNumbers[pose - 1];
+		std::deque<int>::iterator it =  std::lower_bound(bigNumbers.begin(), bigNumbers.end(), nbrToInsert);
+		bigNumbers.insert(it, nbrToInsert);
+	}
+
+	if (x != -1)
+	{
+		std::deque<int>::iterator it =  std::lower_bound(bigNumbers.begin(), bigNumbers.end(), x);
+		bigNumbers.insert(it, x);
+	}
+	deque = bigNumbers;
 }

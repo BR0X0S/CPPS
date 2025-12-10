@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:43:16 by oumondad          #+#    #+#             */
-/*   Updated: 2025/12/09 22:28:23 by oumondad         ###   ########.fr       */
+/*   Updated: 2025/12/10 19:16:25 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <ctime>
 #include <sstream>
 #include <limits.h>
+#include <sys/time.h>
 
 
 struct PmergeMe
@@ -28,6 +29,5 @@ struct PmergeMe
 	void sortVector(std::vector<int>& vec);
 	void sortDeque(std::deque<int>& deq);
 };
-
 
 #endif
